@@ -4,6 +4,7 @@ from tkinter import ttk
 import cv2
 from PIL import Image, ImageTk
 import numpy as np
+# from paddleocr import PaddleOCR, draw_ocr
 
 from threading import Thread
 from time import sleep
@@ -652,6 +653,8 @@ def findThreshold_start():
 
     global ocr_reader,srt
     if ocr_choice==1:
+        from paddleocr import PaddleOCR, draw_ocr
+# C:\Users\DELL\My project\Simple_Subtitle_OCR\[DLPanda.com][]7376247177976335654.mp4
         ocr_reader = PaddleOCR(lang=set_language_Entry.get(),use_gpu=open_gpu_Tkbool.get())
     elif ocr_choice==2:
         ocr_reader = easyocr.Reader(set_language_Entry.get().split(','),gpu=open_gpu_Tkbool.get())
